@@ -1,213 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 :root {
-  --primary-color: #6a11cb;
-  --secondary-color: #2575fc;
-  --background-color: #121212;
-  --surface-color: #1e1e1e;
-  --text-color: #e0e0e0;
-  --border-color: #444;
-  --success-color: #28a745;
-  --error-color: #dc3545;
-  --font-family: 'Roboto', sans-serif;
+  --primary: #a4d3ee;
+  --secondary: #feb47b;
+  --surface: #fff;
+  --background: #f7f7f9;
+  --text-main: #20232a;
+  --border: #eaeaea;
+  --success: #8fd19e;
+  --error: #ff7675;
+  --accent: #4636ff;
+  --font: 'Montserrat', sans-serif;
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    margin: 0;
-    padding: 2rem;
+  background: var(--background);
+  color: var(--text-main);
+  font-family: var(--font);
+  margin: 0;
+  padding: 2rem;
 }
 
 .book-container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 2rem;
-  background-color: var(--surface-color);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  border: 1px solid var(--border-color);
+  max-width: 960px;
+  margin: 30px auto;
+  background: var(--surface);
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(164, 211, 238, 0.18);
 }
 
 h2, h3 {
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-h2 {
-    font-size: 2.5rem;
-}
-
-h3 {
-    font-size: 1.8rem;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-top: 2rem;
+  color: var(--accent);
+  letter-spacing: 1px;
 }
 
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
 }
 
-input, select {
-  padding: 12px 15px;
-  background-color: #2a2a2a;
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
+input {
+  background: var(--background);
+  border: 2px solid var(--border);
+  color: var(--text-main);
+  border-radius: 10px;
+  padding: 10px;
 }
 
-input:focus, select:focus {
+input:focus {
+  border-color: var(--accent);
   outline: none;
-  border-color: var(--secondary-color);
-  box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.25);
 }
 
 .btn-group {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   display: flex;
-  gap: 1rem;
-  justify-content: flex-start;
+  gap: 0.8rem;
 }
 
 button {
-  padding: 12px 20px;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  color: #fff;
+  transition: 0.3s;
 }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn-blue {
-  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-}
-
-.btn-green {
-  background-color: var(--success-color);
-}
-
-.btn-red {
-  background-color: var(--error-color);
-}
-
-.btn-gray {
-  background-color: #6c757d;
-}
-
-.table-wrapper {
-  overflow-x: auto;
-  margin-top: 2rem;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: var(--surface-color);
-}
-
-th, td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid var(--border-color);
-}
-
-th {
-  background-color: #2a2a2a;
-  font-weight: 500;
-  color: #a0a0a0;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-}
-
-tbody tr {
-    transition: background-color 0.2s;
-}
-
-tbody tr:hover {
-  background-color: #2a2a2a;
-}
-
-.action-buttons {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.action-buttons button {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-}
-
-pre {
-  background-color: #2a2a2a;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  color: #d4d4d4;
-}
+.btn-blue { background: linear-gradient(90deg, var(--primary), var(--accent)); color: white; }
+.btn-green { background: var(--success); color: #20232a; }
+.btn-red { background: var(--error); color: white; }
+.btn-gray { background: #d1d1d1; color: #20232a; }
 
 .message-banner {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  padding: 12px 24px;
+  margin-bottom: 1rem;
+  padding: 10px;
   border-radius: 8px;
-  font-weight: 500;
-  z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  opacity: 0;
-  animation: fadeInOut 5s ease-in-out;
+  text-align: center;
+  animation: slideDown 0.5s ease;
+}
+@keyframes slideDown { from{opacity:0;transform:translateY(-10px);} to{opacity:1;transform:translateY(0);} }
+.message-banner.success { background: var(--success); }
+.message-banner.error { background: var(--error); color: white; }
+
+.book-card {
+  background: linear-gradient(105deg, #e0eafc, #cfdef3);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px #a4d3ee55;
 }
 
-@keyframes fadeInOut {
-  0% { opacity: 0; transform: translate(-50%, -20px); }
-  10% { opacity: 1; transform: translate(-50%, 0); }
-  90% { opacity: 1; transform: translate(-50%, 0); }
-  100% { opacity: 0; transform: translate(-50%, -20px); }
-}
+.table-wrapper { overflow-x: auto; } 
+table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+th, td { padding: 10px; border-bottom: 1px solid var(--border); text-align: left; }
+tbody tr:nth-child(even) { background: #f8fbfc; }
 
-
-.message-banner.error {
-  background-color: var(--error-color);
-}
-
-.message-banner.success {
-  background-color: var(--success-color);
-}
-
-.fetch-section {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.fetch-section input {
-    margin: 0;
-    flex-grow: 1;
-}
-
-.fetch-section button {
-    margin: 0;
-}
+.action-buttons { display: flex; gap: 0.4rem; }
