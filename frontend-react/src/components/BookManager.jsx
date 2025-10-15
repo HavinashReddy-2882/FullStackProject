@@ -17,7 +17,9 @@ const BookManager = () => {
   const [message, setMessage] = useState('');
   const [editMode, setEditMode] = useState(false);
 
-  const baseUrl = `${config.url}/bookapi`;
+  const baseUrl = `${config.url}/bookapi`;//jenkins
+  //const baseUrl = `${import.meta.env.VITE_API_URL}/bookapi`; for docker
+  //and remove the war,finalname,servelt in backend and base url in frontend and add the corresponding docker files 
 
   useEffect(() => {
     fetchAllBooks();
